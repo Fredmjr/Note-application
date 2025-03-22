@@ -7,5 +7,5 @@ show the time note was edited
 show who created it and edited
 
 ## features
--[ ] create a note
--[ ] view a note
+- [ ] create a note
+- [ ] view a note
