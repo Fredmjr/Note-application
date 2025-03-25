@@ -1,0 +1,142 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: black;
+    color: white;
+    padding: 0 100px;
+}
+//navibar
+#naviBar{
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    height: 50px;
+    align-items: center;
+    border-bottom: solid #333333 1px;
+    margin: 5px;
+    padding: 0 10px;
+}
+#dropdown-menu {
+    position: absolute;
+    top: 35px;
+    background-color: #333333;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+  
+  #dropdown-menu li {
+    margin-bottom: 10px;
+  }
+  
+  #dropdown-menu a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  #dropdown-menu a:hover {
+    color: gray;
+  }
+
+
+#category{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    margin: 5px;
+    padding: 0 10px;
+}
+
+#addBtn{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+}
+#addBtn:hover{
+    opacity: 
+}
+
+#boardCard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+  }
+
+@media only screen and (min-width: 992px) {
+    #noteCardId{
+        width: 48%;
+        cursor: pointer;
+    }
+  }
+
+@media only screen and (max-width: 992px) {
+    #noteCardId{
+        width: 100%;
+        cursor: pointer;
+    }
+  }
+  
+#notes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background:rgb(33, 33, 33);
+    padding: 5px 20px; 
+    border-radius: 3px;
+}
+  
+#leftSider{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#subMenu{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: full;
+}
+
+#container{
+display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: fit-content;
+    background: pink;
+}
+
+#noteBolierPlate{
+     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#notePlate{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#noteSomething{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#something {
+    width: 100%;
+display: flex;
+align-items: center;
+gap: 30px;
+background: #363636;
+padding-top:10px;
+padding-left:20px;
+padding-right:20px;
+margin-bottom:10px; }
+

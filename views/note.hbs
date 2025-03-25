@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/note.css">
+</head>
+<body>
+{{!-- NaviBar --}}
+    <div id="naviBar">
+        <span id="naviBar">
+            <span style="display: flex; align-items: center; justify-content: space-between; height: 50px; position: relative; gap: 10px; border-bottom: solid #333333 1px; margin: 5px; padding: 0 10px;">
+                <span style="display: flex; align-items: center; gap: 10px;">
+                    <img id="dropdown-button" src="/icons/menu.png"  width="30" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+                    <ul id="dropdown-menu" style="display: none;">
+                    <li><a href="#">Profile</a></li>
+                    <li id="clearedNotesBtn"><a href="#">Cleared Notes</a></li>
+                    <li><a href="#">Dark mode</a></li>
+                    <li><a href="#">Updates</a></li>
+                    <li><a href="#">Share</a></li>
+                    </ul>
+                    <span>Menu</span>
+                </span>
+                <span>
+      <span style=" display: flex; align-items: center; gap: 20px;">
+            <span>
+                <img id="backToNotes" src="/icons/icons8-menu-100 (4).png"  width="25" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            </span>
+            <span>
+                <img src="/icons/notification.png"  width="18" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            </span>
+             <span>
+                <img id="search-icon" src="/icons/search.png"  width="18" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            </span>
+        </span>
+        </span>
+        </span>
+        </span>
+      
+    </div>
+
+{{!-- Category --}}
+    <div id="category">
+        <span>
+            <span style="font-size:25px; font-weight: bold;">All Folders</span><br>
+            <span style="font-size:12px;">Sort by: <span style="color: #606060; font-weight: bold;">Date</span></span>
+        </span>
+        <span id="addBtn">
+           <img src="/icons/instagram-post.png"  width="25" alt="" style="filter: brightness(0) invert(1);">
+        </span>
+    </div>
+
+{{!-- Search Page --}}
+    <div id="search-page" style="display: none;">
+        <h2>Search</h2>
+        <input id="search-input" type="text" placeholder="Search...">
+        <ul id="search-results"></ul>
+    </div>
+    <br>
+{{!-- NotePad --}}
+   {{!--  <div id="notePad">
+        <div id="container"></div>  
+    </div> --}}
+        <div id="board">
+            <div id="boardCard"></div>
+        </div>
+
+{{!-- Cleared Notes --}}
+   <div id="clearedNotes" style="display: none;">
+        <h2>Trash empty</h2>
+        <p>All deleted notes have been cleared from trash!</p>
+    </div>
+
+    <script type="module" src="./js/note.js"></script>
+</body>
+</html>
