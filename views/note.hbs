@@ -13,12 +13,13 @@
             <span style="display: flex; align-items: center; justify-content: space-between; height: 50px; position: relative; gap: 10px; border-bottom: solid #333333 1px; margin: 5px; padding: 0 10px;">
                 <span style="display: flex; align-items: center; gap: 10px;">
                     <img id="dropdown-button" src="/icons/menu.png"  width="30" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
-                    <ul id="dropdown-menu" style="display: none;">
-                    <li><a href="#">Profile</a></li>
-                    <li id="clearedNotesBtn"><a href="#">Cleared Notes</a></li>
-                    <li><a href="#">Dark mode</a></li>
-                    <li><a href="#">Updates</a></li>
-                    <li><a href="#">Share</a></li>
+                    <ul id="dropdown-menu" style="display: none;  font-size: 13px; border-radius: 3px; padding: 10px 15px;">
+                        <li style="display: flex; align-items: center; gap: 5px;"><img src="/icons/user.png"  width="18" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"><a href="#">Profile</a></li>
+                        <div style="width: full; height: 1px; background: #50505084;  margin-bottom: 7px; margin-top: -2px; "></div>
+                        <li id="clearedNotesBtn" style="display: flex; align-items: center; gap: 5px;"><img src="/icons/trash-bin.png"  width="13" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"><a href="#">Cleared Notes</a></li>
+                        <li><a href="#" style="display: flex; align-items: center; gap: 5px;"><img src="/icons/dark-mode.png"  width="20" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">Dark mode</a></li>
+                        <li><a href="#" style="display: flex; align-items: center; gap: 5px;"><img src="/icons/refresh.png"  width="18" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">Updates</a></li>
+                        <li><a href="#" style="display: flex; align-items: center; gap: 5px;"><img src="/icons/share.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">Share</a></li>
                     </ul>
                     <span>Menu</span>
                 </span>
@@ -39,38 +40,76 @@
         </span>
       
     </div>
+<div id="createPage" style="display: none;">
+    <span id="floatMgs">
+        <div id="floatSave"><img id="dropdown-button" src="/icons/save.png"  width="17" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></div>
+    <div id="floatDiscard"><img id="dropdown-button" src="/icons/close.png"  width="10" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></div>
+    </span>
 
-{{!-- Category --}}
-    <div id="category">
-        <span>
-            <span style="font-size:25px; font-weight: bold;">All Folders</span><br>
-            <span style="font-size:12px;">Sort by: <span style="color: #606060; font-weight: bold;">Date</span></span>
+    <div id="infoGraph">
+        <span id="btnArea">
+            <span>
+                <input id="noteTitle" type="text" placeholder="Note Title">
+            </span>
         </span>
-        <span id="addBtn">
-           <img src="/icons/instagram-post.png"  width="25" alt="" style="filter: brightness(0) invert(1);">
+        <span style="display: flex; align-items: center; gap:10px;">
+            <span id="savePopup" style="display: none;">
+                <span style="display: flex; align-items: center; gap:7px; font-size: 11px;">
+                <img id="dropdown-button" src="/icons/quality.png"  width="18" alt="">
+                Saved
+                <span style="display: flex; align-items: center; gap: 2px;">
+                    <div style="background-color: green; height:4px; width: 4px;  border-radius: 3px;"></div>
+                    <div style="background-color: rgb(5, 197, 5); height:4px; width: 4px;  border-radius: 3px;"></div>
+                    <div style="background-color: rgb(121, 210, 121); height:4px; width: 4px;  border-radius: 3px;"></div>
+                </span>
+            </span>
+            </span>
+            
+            <span style="font-size: 14px;">Editing Mode</span>
+            {{!-- <button id="createBtn">Create</button>
+            <button id="discardBtn">Discard</button> --}}
         </span>
+    </div >
+    <div id="notesGraph">
+        
+        {{!-- <div id="noteNotes" contenteditable="true" placeholder="">Begin your jounery right here...</div> --}}
+       {{!--  <textarea name="noteNotes" id="noteNotes" placeholder="Begin your jounery right here..."></textarea> --}}
     </div>
-
-{{!-- Search Page --}}
-    <div id="search-page" style="display: none;">
-        <h2>Search</h2>
-        <input id="search-input" type="text" placeholder="Search...">
-        <ul id="search-results"></ul>
-    </div>
-    <br>
-{{!-- NotePad --}}
-   {{!--  <div id="notePad">
-        <div id="container"></div>  
-    </div> --}}
-        <div id="board">
-            <div id="boardCard"></div>
+</div>
+<div id="content">
+    {{!-- Category --}}
+        <div id="category">
+            <span>
+                <span style="font-size:25px; font-weight: bold;">All Notes</span><br>
+                <span style="font-size:12px;">Sort by: <span style="color: #606060; font-weight: bold;">Date</span></span>
+            </span>
+            <span id="addBtn">
+            <img src="/icons/instagram-post.png"  width="25" alt="" style="filter: brightness(0) invert(1);">
+            </span>
         </div>
 
-{{!-- Cleared Notes --}}
-   <div id="clearedNotes" style="display: none;">
-        <h2>Trash empty</h2>
-        <p>All deleted notes have been cleared from trash!</p>
-    </div>
+    {{!-- Search Page --}}
+        <div id="search-page" style="display: none;">
+            <h2>Search</h2>
+            <input id="search-input" type="text" placeholder="Search...">
+            <ul id="search-results"></ul>
+        </div>
+        <br>
+    {{!-- NotePad --}}
+    {{!--  <div id="notePad">
+            <div id="container"></div>  
+        </div> --}}
+            <div id="board">
+                <div id="boardCard"></div>
+            </div>
+
+    {{!-- Cleared Notes --}}
+    <div id="clearedNotes" style="display: none;">
+            <h2>Trash empty</h2>
+            <p>All deleted notes have been cleared from trash!</p>
+        </div>
+</div>
+
 
     <script type="module" src="./js/note.js"></script>
 </body>

@@ -71,7 +71,7 @@ body{
 
 @media only screen and (min-width: 992px) {
     #noteCardId{
-        width: 48%;
+        width: 49%;
         cursor: pointer;
     }
   }
@@ -140,3 +140,110 @@ padding-left:20px;
 padding-right:20px;
 margin-bottom:10px; }
 
+#infoGraph{
+    display: flex;
+align-items: center; justify-content: space-between;
+padding:10px 0;
+}
+#btnArea{
+    display: flex;
+    gap: 10px;
+}
+#createBtn{
+    /* background-color:rgb(20, 170, 3); */
+    background-color:#363636;
+    height: 30px;
+    width: 100px;
+    border-radius: 3px;
+    outline: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#discardBtn{
+   /*  background-color:rgb(170, 3, 3); */
+    background-color:rgba(39, 39, 39, 0);
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    border: #363636 solid 1px;
+}
+
+#floatMgs{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1px;
+}
+#floatSave{
+    background-color: #363636 ;
+    /* background-color:rgb(2, 125, 41); */
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 5px;
+}
+#floatSave:hover {
+   background-color: green;
+  }
+
+#floatDiscard{
+    /* background-color:rgb(125, 2, 2); */
+    border: #363636 solid 1px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 5px;
+    
+}
+#floatDiscard:hover {
+   background-color: red;
+   border: red solid 1px;
+  }
+
+#noteTitle{
+    all: unset;
+    background-color: transparent;
+    border-bottom: none;
+    outline: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    width: 100%;
+    height: fit-content;
+}
+#noteNotes{
+    all: unset;
+    background-color: transparent;
+    border-bottom: none;
+    outline: none;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+
+    resize:vertical;
+    resize: horizontal;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+#noteNotes{
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-size: 12px;
+    color:rgb(185, 185, 185);
+    height: full;
+}

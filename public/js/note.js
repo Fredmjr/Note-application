@@ -1,3 +1,4 @@
+
 //so process is simple:
 /* .data is mapp from the Object, 
 so when adding eg when we add, we are just pushing a new object to an array of objects.
@@ -36,9 +37,15 @@ const data = [
   { id: 1, nameNote: 'Note#1', numNotes: '30' },
   { id: 2, nameNote: 'Note#2', numNotes: '25' },
   { id: 3, nameNote: 'Note#3', numNotes: '40' },
+  { id: 4, nameNote: 'Note#4', numNotes: '16' },
 ];
 
 //NAVIBAR
+//Grobal vairables
+const content = document.getElementById("content");
+const createPage = document.getElementById("createPage");
+
+
 //Dropdown-menu
   const dropdownButton = document.getElementById('dropdown-button');
   const dropdownMenu = document.getElementById('dropdown-menu');
@@ -53,9 +60,10 @@ const data = [
   const searchPage = document.getElementById("search-page");
   const notePad = document.getElementById("notePad");
   clearedNotesBtn.addEventListener('click', () => {
+    createPage.style.display = "none";
+    content.style.display = "block";
+    board.style.display = "none";
     clearedNotes.style.display = "block";
-    searchPage.style.display = "none";
-    notePad.style.display = "none";
 });
 
   
@@ -68,12 +76,14 @@ backToNotes.addEventListener('click', () => {
   searchPage.style.display = "none";
   board.style.display = "block";
   clearedNotes.style.display = "none";
+  content.style.display = "block";
+  createPage.style.display = "none";
 })
 
 //Notification/Messages
 //???????
 
-//search
+//Search
 const search_icon = document.getElementById('search-icon');
 
 search_icon.addEventListener('click', () => {
@@ -81,8 +91,11 @@ search_icon.addEventListener('click', () => {
   const searchPage = document.getElementById("search-page");
   const board = document.getElementById("board");
   
+  
   searchPage.style.display = "block";
   board.style.display = "none";
+  content.style.display = "block";
+  createPage.style.display = "none";
   clearedNotes.style.display = "none";
   // Focus on the search input
   const searchInput = document.getElementById("search-input");
@@ -111,6 +124,12 @@ function search() {
   });
 }
 
+//create/new note page
+const addBtn = document.getElementById("addBtn");
+  addBtn.addEventListener('click', () => {
+    createPage.style.display = "block";
+    content.style.display = "none";
+});
 
 
 
@@ -136,9 +155,9 @@ function search() {
 
           </div>
           <div id="subMenu"> 
-            <img id="dropdown-button" src="/icons/edit.png"  width="18" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
-            <img id="dropdown-button" src="/icons/push-pin.png"  width="18" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
-            <img id="dropdown-button" src="/icons/delete.png"  width="18" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            <img id="dropdown-button" src="/icons/edit.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            <img id="dropdown-button" src="/icons/push-pin.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            <img id="dropdown-button" src="/icons/delete.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
           </div>
         </div>
        
@@ -147,3 +166,25 @@ function search() {
     boardCard.appendChild(noteCard);
     
   });
+
+  //NOTE PAGE
+  //Discarding Note
+  const floatDiscard = document.getElementById("floatDiscard");
+  floatDiscard.addEventListener('click', () => {
+    createPage.style.display = "none";
+    content.style.display = "block";
+});
+
+  const savePopup = document.getElementById("savePopup");
+  floatSave.addEventListener('click', () => {
+const savePopup = document.getElementById('savePopup');
+
+setTimeout(() => {
+  savePopup.style.display = 'block';
+
+  setTimeout(() => {
+    savePopup.style.display = 'none';
+  }, 3000);
+}, 500);
+});
+
