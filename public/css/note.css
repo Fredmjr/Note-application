@@ -148,6 +148,8 @@ padding:10px 0;
 #btnArea{
     display: flex;
     gap: 10px;
+    width: 70%;
+    background: #363636;
 }
 #createBtn{
     /* background-color:rgb(20, 170, 3); */
@@ -213,7 +215,7 @@ padding:10px 0;
    border: red solid 1px;
   }
 
-#noteTitle{
+/* #noteTitle{
     all: unset;
     background-color: transparent;
     border-bottom: none;
@@ -223,7 +225,7 @@ padding:10px 0;
     font-weight: bold;
     width: 100%;
     height: fit-content;
-}
+} */
 #noteNotes{
     all: unset;
     background-color: transparent;

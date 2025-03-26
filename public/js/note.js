@@ -188,3 +188,29 @@ setTimeout(() => {
 }, 500);
 });
 
+//Text area
+const noteText = document.getElementById('noteText');
+
+noteText.addEventListener('input', () => {
+  noteText.style.height = 'auto';
+  noteText.style.height = noteText.scrollHeight + 'px';
+});
+
+const noteTextTitle = document.getElementById('noteTextTitle');
+
+noteTextTitle.addEventListener('input', () => {
+  noteTextTitle.style.height = 'auto';
+  noteTextTitle.style.height = noteTextTitle.scrollHeight + 'px';
+});
+
+
+
+/* //Title area
+const noteTitle = document.querySelector('noteTitle');
+
+noteTitle.addgetElementById('input', () => {
+  noteTitle.style.height = 'auto';
+  noteTitle.style.height = noteTitle.scrollHeight + 'px';
+});
+ */
+
