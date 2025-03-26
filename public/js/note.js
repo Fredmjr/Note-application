@@ -1,36 +1,3 @@
-
-//so process is simple:
-/* .data is mapp from the Object, 
-so when adding eg when we add, we are just pushing a new object to an array of objects.
-add mapping our array of objects using js in div */
-
-
-
-
-/* const data = [
-    { id: 1, nameNote: 'Note#1', numNotes: '30' },
-    { id: 2, nameNote: 'Note#2', numNotes: '25' },
-    { id: 3, nameNote: 'Note#3', numNotes: '40' },
-  ];
-  
-  const container = document.getElementById('container');
-
-  data.map((item) => {
-    const noteCard = document.createElement('noteCard');
-    noteCard.innerHTML = `
-    <div id="something">
-     <p>${item.id}</p>
-      <div>
-      <span id="noteSomething">${item.nameNote}</span>
-      <p>${item.numNotes} notes</p>
-      </div>
-    </div>
-    `;
-    container.appendChild(noteCard);
-    
-  }); */
-
-
 //Code starts here
 //DATA FOR ALL NOTE APP UI/UX
 const data = [
@@ -64,6 +31,7 @@ const createPage = document.getElementById("createPage");
     content.style.display = "block";
     board.style.display = "none";
     clearedNotes.style.display = "block";
+    searchPage.style.display = "none";
 });
 
   
@@ -136,8 +104,6 @@ const addBtn = document.getElementById("addBtn");
 
 //CATEGORY NOTE
 //data array objects is the same used on search functions
-
-  
   const boardCard = document.getElementById('boardCard');
 
   data.map((item) => {
@@ -202,15 +168,4 @@ noteTextTitle.addEventListener('input', () => {
   noteTextTitle.style.height = 'auto';
   noteTextTitle.style.height = noteTextTitle.scrollHeight + 'px';
 });
-
-
-
-/* //Title area
-const noteTitle = document.querySelector('noteTitle');
-
-noteTitle.addgetElementById('input', () => {
-  noteTitle.style.height = 'auto';
-  noteTitle.style.height = noteTitle.scrollHeight + 'px';
-});
- */
 
