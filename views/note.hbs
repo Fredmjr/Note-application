@@ -81,10 +81,29 @@
         </div>
 
     {{!-- Search Page --}}
-        <div id="search-page" style="display: none;">
+        <div id="search-page" style="display: none; background: #121212; text-align: center; padding: 20px 0px;">
             <h2>Search</h2>
-            <input id="search-input" type="text" placeholder="Search...">
-            <ul id="search-results"></ul>
+            <span id="searchSection" style="display: flex; align-items: center; justify-content: center;">
+               <div id="searchBar">
+                <span style="display: flex; gap: 10px;">
+                    <span><img id="returnSearchBar" src="/icons/search.png"  width="20" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></span>
+                <span style="width: 100%;">
+                    <input id="search-input" type="text" placeholder="Search..." style="outline: none; background: none; border: none; color: white;">
+                    {{!-- for microphone --}}
+                    <div id="audioHere" style="color: white; font-size: 14px; display: none;"></div>
+                    </span> 
+                </span>
+                <img id="mircoPhone" src="/icons/microphone.png"  width="22" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            </div> 
+            </span>
+            
+     {{!-- Searched Notes Results --}}       
+            <div id="searchedBoard">
+                     <div id="search-results" class="searchedBoardCard"></div>
+            </div>
+           
+                
+            </div>
         </div>
         <br>
     {{!-- NotePad --}}

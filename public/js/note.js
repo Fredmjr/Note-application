@@ -86,9 +86,28 @@ function search() {
   const searchResultsList = document.getElementById("search-results");
   searchResultsList.innerHTML = "";
   searchResults.forEach((result) => {
-    const listItem = document.createElement("LI");
-    listItem.textContent = result.nameNote;
-    searchResultsList.appendChild(listItem);
+    const searchedNote = document.createElement("searchedNote");
+    searchedNote.id = 'searchedNoteId';
+    searchedNote.innerHTML = 
+
+    searchedNote.textContent = `
+        <div id="searchedNotes">
+          <div id="searchedLeftSider">
+            <span>${searchedNote.textContent = result.id}</span>
+            <span>
+              <p style="margin-top:5px; margin-bottom:-2px; font-size: 20px;">${searchedNote.textContent = result.nameNote}</p>
+              <p style="margin:5px 0; font-size: 12px;  color:rgb(122, 121, 121);">${searchedNote.textContent = result.numNotes} notes</p>
+            </span>
+
+          </div>
+          <div id="searchedSubMenu"> 
+            <img src="/icons/edit.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            <img src="/icons/push-pin.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            <img src="/icons/delete.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+          </div>
+        </div>
+    `;;
+    searchResultsList.appendChild(searchedNote);
   });
 }
 
@@ -169,3 +188,52 @@ noteTextTitle.addEventListener('input', () => {
   noteTextTitle.style.height = noteTextTitle.scrollHeight + 'px';
 });
 
+
+//Microphone audio recording
+ let audioHere = document.getElementById ("audioHere");
+  let searchInput = document.getElementById ("search-input"); 
+document.getElementById('mircoPhone').onclick = function () {
+  audioHere.style.display = "block";
+  searchInput.style.display = "none";  
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition);
+recognition.lang = "en-GB";
+recognition.continuous = true;
+
+document.onclick = recognition.start();
+
+recognition.onresult = (event) => {
+    for (const result of event.results){
+    element.innerText = result[0].transcript;
+}
+}  
+}
+
+/* 
+document.getElementById('mircoPhone').onclick = function () {
+  let searchInput = document.getElementById("search-input");
+  audioHere.style.display = "block";
+  searchInput.style.display = "none";
+
+  let element = document.getElementById("audioHere");
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition);
+  recognition.lang = "en-GB";
+  recognition.continuous = true;
+  recognition.onresult = (event) => {
+    for (const result of event.results) {
+      element.innerText += result[0].transcript;
+    }
+  };
+  recognition.onerror = (event) => {
+    console.error('Error occurred during recognition:', event.error);
+  };
+  document.onclick = () => recognition.start();
+}
+ */
+
+
+//  Return search input while removing microphone
+const returnSearchBar = document.getElementById('returnSearchBar');
+returnSearchBar.addEventListener('click', ()=>{
+    audioHere.style.display = "none";
+  searchInput.style.display = "block";
+})
