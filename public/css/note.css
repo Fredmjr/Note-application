@@ -5,6 +5,20 @@ body{
     color: white;
     padding: 0 100px;
 }
+
+
+@media only screen and (min-width: 992px) {
+    body{
+       padding: 0 100px;
+    }
+  }
+
+@media only screen and (max-width: 992px) {
+    body{
+      padding: 0 20px;
+    }
+  }
+
 //navibar
 #naviBar{
     display: flex;
@@ -249,8 +263,9 @@ padding:10px 0;
     color:rgb(185, 185, 185);
     height: full;
 }
-#search-input{
-
+#search-input:focus{
+   background-color: #262626;
+   color:rgb(185, 185, 185);
 }
 #searchBar{
      background-color: #262626;
@@ -303,12 +318,14 @@ padding:10px 0;
 #searchedBoard{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
     gap: 10px;
   }
   .searchedBoardCard {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
     gap: 10px;
     padding-top: 30px;

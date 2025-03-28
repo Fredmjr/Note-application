@@ -112,10 +112,15 @@ function search() {
 }
 
 //create/new note page
-const addBtn = document.getElementById("addBtn");
+  const addBtn = document.getElementById("addBtn");
+  
   addBtn.addEventListener('click', () => {
-    createPage.style.display = "block";
+    const board = document.getElementById("board");
     content.style.display = "none";
+    createPage.style.display = "block";
+    clearedNotes.style.display = "none";
+    board.style.display = "none";
+    searchPage.style.display = "none";
 });
 
 
@@ -158,10 +163,12 @@ const addBtn = document.getElementById("addBtn");
   floatDiscard.addEventListener('click', () => {
     createPage.style.display = "none";
     content.style.display = "block";
+    
+    board.style.display = "block";
 });
 
   const savePopup = document.getElementById("savePopup");
-  floatSave.addEventListener('click', () => {
+  savePopup.addEventListener('click', () => {
 const savePopup = document.getElementById('savePopup');
 
 setTimeout(() => {
@@ -237,3 +244,28 @@ returnSearchBar.addEventListener('click', ()=>{
     audioHere.style.display = "none";
   searchInput.style.display = "block";
 })
+
+
+//Icon media query screen size
+/* const iconMedisSize = {
+  if(){}
+  else{}
+} */
+
+
+//DATA TRANSFER
+const floatSave = document.getElementById("floatSave");
+floatSave.addEventListener("click", function() {
+  let noteTextTitle = document.getElementById("noteTextTitle").value;
+  let noteText = document.getElementById("noteText").value;
+  let result = { "title": noteTextTitle, "notes": noteText };
+  console.log(result);
+  fetch('http://localhost:3000', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(result)
+
+  });
+});
