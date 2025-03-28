@@ -254,7 +254,7 @@ returnSearchBar.addEventListener('click', ()=>{
 
 
 //DATA TRANSFER
-const floatSave = document.getElementById("floatSave");
+/* const floatSave = document.getElementById("floatSave");
 floatSave.addEventListener("click", function() {
   let noteTextTitle = document.getElementById("noteTextTitle").value;
   let noteText = document.getElementById("noteText").value;
@@ -268,4 +268,4 @@ floatSave.addEventListener("click", function() {
     body: JSON.stringify(result)
 
   });
-});
+}); */
