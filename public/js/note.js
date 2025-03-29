@@ -145,9 +145,9 @@ function search() {
 
           </div>
           <div id="subMenu"> 
-            <img id="dropdown-button" src="/icons/edit.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
-            <img id="dropdown-button" src="/icons/push-pin.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
-            <img id="dropdown-button" src="/icons/delete.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;">
+            <span class="editNoteBtn"><img src="/icons/edit.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></span>
+            <span class="pinNoteBtn"><img src="/icons/push-pin.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></span>
+            <span class="deleteNoteBtn"><img src="/icons/delete.png"  width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></span>
           </div>
         </div>
        
@@ -167,8 +167,8 @@ function search() {
     board.style.display = "block";
 });
 
-  const savePopup = document.getElementById("savePopup");
-  savePopup.addEventListener('click', () => {
+  const floatSave = document.getElementById("floatSave");
+  floatSave.addEventListener('click', () => {
 const savePopup = document.getElementById('savePopup');
 
 setTimeout(() => {
@@ -269,3 +269,44 @@ floatSave.addEventListener("click", function() {
 
   });
 }); */
+
+
+//Edit note page (ET help. used here for loop)
+const showEditPage = document.getElementById("showEditPage");
+const editNoteBtns = document.getElementsByClassName("editNoteBtn");
+function editngNoteScreen() {
+  const board = document.getElementById("board");
+    showEditPage.style.display = "block";
+  content.style.display = "none";
+  clearedNotes.style.display = "none";
+  board.style.display = "none";
+  searchPage.style.display = "none";
+}
+
+for (let i = 0; i < editNoteBtns.length; i++) {
+  editNoteBtns[i].addEventListener('click', editngNoteScreen);
+}
+
+
+//Showing popup message for saved edits
+const saveEditPopup = document.getElementById("saveEditPopup");
+const floatAppend = document.getElementById("floatAppend");
+floatAppend.addEventListener('click', () => {
+setTimeout(() => {
+  saveEditPopup.style.display = 'block';
+
+setTimeout(() => {
+  saveEditPopup.style.display = 'none';
+}, 3000);
+}, 500);
+});
+
+
+//closing the edit page
+const floatAppendDiscard = document.getElementById("floatAppendDiscard");
+floatAppendDiscard.addEventListener('click', () => {
+  showEditPage.style.display = "none";
+  content.style.display = "block"; 
+  board.style.display = "block";
+});
+

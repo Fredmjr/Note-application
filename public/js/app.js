@@ -36,4 +36,5 @@ const displayNotes=()=>{
 
 //this below calls the predefined function(send) and (send) is defined at the top.
 floatSave.addEventListener('click', send)
+floatSave.addEventListener('click', )
 

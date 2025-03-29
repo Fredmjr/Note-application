@@ -351,3 +351,44 @@ padding:10px 0;
     }
   }
   
+  
+#floatEdit{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1px;
+}
+#floatAppend{
+    background-color: #363636 ;
+    /* background-color:rgb(2, 125, 41); */
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 5px;
+}
+
+#floatAppend:hover {
+    background-color: orange;
+   }
+
+#floatAppendDiscard{
+    /* background-color:rgb(125, 2, 2); */
+    border: #363636 solid 1px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 5px;
+    
+}
+#floatAppendDiscard:hover {
+   background-color: red;
+   border: red solid 1px;
+  }
