@@ -1,2 +1,2 @@
-FOODS 
- New dishes
+<textarea rows="1" id="noteTextTitle" style="margin: -5px 0px; width: 70%; overflow-y: hidden; resize: none; background-color:#36363600; color: white; outline: none; border: none; font-size: 15px; font-weight: bold; text-transform: uppercase;" placeholder="Note Title">FOODS </textarea>
+ <textarea id="noteText" style="min-height: 100px; width: 100%; overflow-y: hidden; resize: none; background-color:#36363600; color: rgb(208, 207, 207); outline: none; border: none;" placeholder="Begin your jounery right here..."> New dishes</textarea>

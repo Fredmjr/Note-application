@@ -28,14 +28,19 @@ fetch('/save', {
 
 
 //here we are fetching dat, d
-const displayNotes = () => {
+/* const displayNotes = () => {
   fetch('/list', { method: 'GET' })
     .then(response => response.json())
     .then((data) => {
       boardCard.innerHTML = `
         ${data.files.map((file) => (
           `
-            <div id="${file}" style="margin-top:5px; margin-bottom:-2px; font-size: 20px;">
+            <div id="${file}"
+            hx-get="/read/${file}"
+            hx-target="body"
+            hx-swap="innerHTML"
+            hx-trigger="click"
+            style="margin-top:5px; margin-bottom:-2px; font-size: 20px;">
               <div id="notes">
                 <div id="leftSider">
                   <span style="font-size: 12px;">${file}</span>
@@ -68,7 +73,7 @@ const displayNotes = () => {
         });
       });
     })
-};
+}; */
 
 /* 
 view = (title) =>{
@@ -139,7 +144,7 @@ editNoteBtns.forEach((editNoteBtn) => {
 
 //this below calls the predefined function(send) and (send) is defined at the top.
 floatSave.addEventListener('click', send)
-document.addEventListener('DOMContentLoaded', displayNotes)
+/* document.addEventListener('DOMContentLoaded', displayNotes) */
 
 /* let modifyNoteBtns = document.querySelectorAll("modifyNoteBtns");
 modifyNoteBtns.forEach((btn) => {

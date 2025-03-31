@@ -26,7 +26,7 @@ app.get("/redirects/notifications", (req, res) => {
 })
 app.post("/save", (req, res) => {
   const {title, notes} = req.body
-  const content = `${title} \n ${notes}`
+  const content = `<p>${title}</p> \n <p>${notes}</p>`
   let filepath = path.join(saveDir, `${title}.md`)
   fs.writeFile(filepath, content, (err)=>{
     console.log(err)
@@ -58,9 +58,10 @@ app.get("/list", (req, res) => {
       }
     }
     const filteredFilesWithoutBlackets = filterFiles.join("\n")
-    res.json({
-      "files": filterFiles})
+    res.render("components/list", {
+      files: filterFiles,
     })
+  })
   })
 
 

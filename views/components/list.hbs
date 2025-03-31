@@ -1,0 +1,24 @@
+{{#each files}} 
+
+ 
+ <div
+            hx-get="/read/{{this}}"
+            hx-target="body"
+            hx-swap="innerHTML"
+            hx-trigger="click"
+            style="margin-top:5px; margin-bottom:-2px; font-size: 20px;">
+              <div id="notes">
+                <div id="leftSider">
+                  <span style="font-size: 12px;"></span>
+                  <span>
+                    <p id="titleFromData" style="margin-top:5px; margin-bottom:-2px; font-size: 20px;">{{this}}</p>
+                  </span>
+                </div>
+                <div id="subMenu">
+                  <span class="modifyNoteBtns"><img src="/icons/edit.png" width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></span>
+                  <span class="pinNoteBtn"><img src="/icons/push-pin.png" width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></span>
+                  <span class="deleteNoteBtn"><img src="/icons/delete.png" width="15" alt="" style="filter: brightness(0) invert(1); cursor: pointer;"></span>
+                </div>
+              </div>
+            </div>
+{{/each}}
