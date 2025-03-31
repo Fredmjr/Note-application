@@ -14,8 +14,11 @@ app.use(express.static('views'));
 app.use(express.static('public'));
 
 app.use(express.json())
-
-
+//saving director folder
+const saveDir = path.join(__dirname, 'notes')
+if (!fs.existsSync(saveDir)){
+  fs.mkdirSync(saveDir)
+}
 
 
 app.get("/redirects/notifications", (req, res) => {
@@ -24,7 +27,8 @@ app.get("/redirects/notifications", (req, res) => {
 app.post("/save", (req, res) => {
   const {title, notes} = req.body
   const content = `${title} \n ${notes}`
-  fs.writeFile("note.txt", content, (err)=>{
+  let filepath = path.join(saveDir, `${title}.md`)
+  fs.writeFile(filepath, content, (err)=>{
     console.log(err)
   })
   res.json({
@@ -33,16 +37,33 @@ app.post("/save", (req, res) => {
   })
 })
 //reading data
-app.get("/read", (req, res)=>{
-  fs.readFile("note.txt","utf-8", (err, data)=>{
+app.get("/read/:title", (req, res)=>{
+  let filepath = path.join(saveDir, `${req.params.title}.md`)
+  fs.readFile(filepath,"utf-8", (err, data)=>{
     if (err){
       console.log(err)
     }
     res.send(data)
   } )
-}
+})
 
-)
+app.get("/list", (req, res) => {
+  fs.readdir(saveDir, (error, files)=>{
+    let filterFiles = []
+    for (const file of files){
+      if (file.endsWith(".md")){
+        filterFiles.push(
+          file.replace(".md", "")
+        )
+      }
+    }
+    const filteredFilesWithoutBlackets = filterFiles.join("\n")
+    res.json({
+      "files": filterFiles})
+    })
+  })
+
+
 
 app.get("/note", (req, res) => {
   res.render("note")

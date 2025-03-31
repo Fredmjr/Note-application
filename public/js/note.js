@@ -128,7 +128,7 @@ function search() {
 
 //CATEGORY NOTE
 //data array objects is the same used on search functions
-  const boardCard = document.getElementById('boardCard');
+ /*  const boardCard = document.getElementById('boardCard');
 
   data.map((item) => {
     
@@ -155,7 +155,7 @@ function search() {
 
     boardCard.appendChild(noteCard);
     
-  });
+  }) */;
 
   //NOTE PAGE
   //Discarding Note
@@ -309,4 +309,21 @@ floatAppendDiscard.addEventListener('click', () => {
   content.style.display = "block"; 
   board.style.display = "block";
 });
+
+
+
+/* 
+function updateTwo (){
+  storage += "2" 
+  console.log(storage)
+ }
+document.querySelector('#numTwo').addEventListener('click',updateTwo)
+
+function updatePlus (){
+  storage += "+" 
+  console.log(storage)
+ }
+document.querySelector('#PlusSign').addEventListener('click',updatePlus)
+ */
+
 
